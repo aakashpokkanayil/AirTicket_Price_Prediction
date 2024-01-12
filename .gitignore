@@ -9,6 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+venv_airticket/
 develop-eggs/
 dist/
 downloads/
