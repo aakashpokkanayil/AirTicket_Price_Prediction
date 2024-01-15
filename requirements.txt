@@ -8,3 +8,6 @@ statsmodels
 scikit-learn
 xgboost
 openpyxl
+plotly
+wordcloud
+nbformat
