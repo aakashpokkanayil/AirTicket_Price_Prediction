@@ -11,3 +11,5 @@ openpyxl
 plotly
 wordcloud
 nbformat
+dill
+dataclasses
