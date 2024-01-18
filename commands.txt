@@ -11,11 +11,11 @@
     >> code . (this will open vs code)
 
 4# Create Virtual Envt.
-    >> conda create -p venv_usa_project python==3.11
+    >> conda create -p venv_airticket python==3.11
     >> conda info --envs (to list all venv)
 
 5# Activate new virtual envt.   
-    >>conda activate venv_usa_project/
+    >>conda activate venv_airticket/
 
 6# Inorder to run jupyter notebook install ipykernel
     >> pip install ipykernel

@@ -56,8 +56,12 @@ class DataCleaning:
         df_copy['Month']=df_copy.Date_of_Journey.dt.month_name()
         df_copy['Week']=df_copy.Date_of_Journey.dt.day_name()
         
+        label=['morning','noon','after noon','evening','night']
+        bin=[0,11,12,15,18,24]
+        df_copy['Arrival_Time']=pd.cut(df_copy.Arrival_Time_hrs,bins=bin,labels=label,include_lowest=True)
+        df_copy['Dep_Time']=pd.cut(df_copy.Dep_Time_hrs,bins=bin,labels=label,include_lowest=True)
         
-        df_copy.drop(columns=['Dep_Time','Arrival_Time','Duration','Total_Stops','Additional_Info','Date_of_Journey'],inplace=True)
+        df_copy.drop(columns=['Duration','Total_Stops','Additional_Info','Date_of_Journey','Route','Arrival_Time_hrs','Dep_Time_hrs'],inplace=True)
         
         df_eda=df_copy.copy()
         
