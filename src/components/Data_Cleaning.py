@@ -64,8 +64,15 @@ class DataCleaning:
         df_copy.drop(columns=['Duration','Total_Stops','Additional_Info','Date_of_Journey','Route','Arrival_Time_hrs','Dep_Time_hrs'],inplace=True)
         
         df_eda=df_copy.copy()
+        df_modeling=df_copy.copy()
         
-        return df_eda
+        df_modeling.drop(columns=['Duration_hr'],inplace=True)
+        df_modeling.drop_duplicates(inplace=True)
+        
+        df_modeling_dummies=pd.get_dummies(data=df_modeling,drop_first=True,dtype=int)
+        
+        
+        return (df_eda,df_modeling_dummies)
     
     
     def Preprocessing(self):
